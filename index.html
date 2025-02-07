@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミステリーハウス入口</title>
+    <style>
+　　  #hiddenContent {
+    　display: none; /* 最初は非表示 */
+　　  }
+　　</style>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>ログイン</h2>
+    <form id="loginForm">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">ログイン</button>
+
+        <div id="errorMessage" class="error-message"></div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+
+        // ここで認証処理を行います (例: ユーザー名とパスワードのチェック)
+        if (username === 'morimoto' && password === 'reo') {
+            // ログイン成功
+            // ページ遷移
+            // window.location.href = 'mistery.html'; // successページへ遷移
+        } else {
+            // ログイン失敗
+            errorMessage.textContent = 'ユーザー名またはパスワードが間違っています。';
+        }
+    });
+</script>
+
+<button onclick="toggleContent()">コンテンツを表示/非表示</button>
+
+<div id="hiddenContent">
+  <p>これが隠しコンテンツです。</p>
+</div>
+
+</body>
+</html>
