@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ミステリーハウス入口</title>
     <style>
-　　  #hiddenContent {
-    　display: none; /* 最初は非表示 */
-　　  }
-　　</style>
-    <style>
         body {
             font-family: sans-serif;
             display: flex;
@@ -91,19 +86,13 @@
         if (username === 'morimoto' && password === 'reo') {
             // ログイン成功
             // ページ遷移
-            // window.location.href = 'mistery.html'; // successページへ遷移
+            window.location.href = 'mistery.html'; // successページへ遷移
         } else {
             // ログイン失敗
             errorMessage.textContent = 'ユーザー名またはパスワードが間違っています。';
         }
     });
 </script>
-
-<button onclick="toggleContent()">コンテンツを表示/非表示</button>
-
-<div id="hiddenContent">
-  <p>これが隠しコンテンツです。</p>
-</div>
 
 </body>
 </html>
